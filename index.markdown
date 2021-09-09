@@ -1,6 +1,12 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
+layout: page
+title: Home
+permalink: /index/
 ---
+
+ _              _                   __
+| |            | |                 / _|
+| | ____ _ _ __| |___  ___ _ __   | |_ _ __
+| |/ / _` | '__| / __|/ _ \ '_ \  |  _| '__|
+|   < (_| | |  | \__ \  __/ | | |_| | | |
+|_|\_\__,_|_|  |_|___/\___|_| |_(_)_| |_|
