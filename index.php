@@ -24,9 +24,9 @@
 
 			<tr class="links">
 				<td colspan="5">
-					<a href="https://github.com/sebastka" title="Github" target="_blank"><img src="icons/github.invert.svg" alt="Github" class="invert"></a>
-					<a href="https://www.linkedin.com/in/sebastka/" title="LinkedIn" target="_blank"><img src="icons/linkedin.invert.svg" alt="LinkedIn" class="invert"></a>
-					<a href="public.asc" title="PGP Public key"><img src="icons/key.invert.svg" alt="PGP" class="invert"></a>
+					<a href="https://github.com/sebastka" title="Github" target="_blank"><img src="icons/github.invert.svg" alt="Github"></a>
+					<a href="https://www.linkedin.com/in/sebastka/" title="LinkedIn" target="_blank"><img src="icons/linkedin.invert.svg" alt="LinkedIn"></a>
+					<a href="public.asc" title="PGP Public key"><img src="icons/key.invert.svg" alt="PGP"></a>
 				</td>
 			</tr>
 		</table>

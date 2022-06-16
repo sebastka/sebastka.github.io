@@ -41,10 +41,6 @@ tr.links {
 	text-align: center;
 }
 
-.links img.invert {
-	filter: invert(1);
-}
-
 .links a {
 	padding: 1%;
 }
