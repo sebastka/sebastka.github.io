@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
 
-        <title>karlsen.fr</title>
+        <title>Karlsen</title>
         <meta name="description" content="Sebastian Karlsen's portfolio">
         <meta name="keywords" content="karlsen, sebastian, portfolio">
         <meta name="author" content="Sebastian Karlsen">
