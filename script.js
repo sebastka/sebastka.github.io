@@ -1,10 +1,10 @@
-document.addEventListener("DOMContentLoaded", function(event) {
-    var pre = document.getElementById('hostname-pre');
-    pre.innerHTML = file_get_contents('karlsen.fr.ascii');
-});
+document.addEventListener("DOMContentLoaded", async function(event) {
+    var content = await fetch('karlsen.fr.ascii')
+        .then((response) => response.text())
+        .then((data) => {
+            return data;
+        }
+    );
 
-function file_get_contents(filename) {
-    fetch(filename).then((resp) => resp.text()).then(function(data) {
-        return data;
-    });
-}
+    document.getElementById('hostname-pre').innerHTML = content;
+});
