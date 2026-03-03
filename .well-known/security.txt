@@ -1,4 +1,4 @@
-Contact: mailto:postmaster@karlsen.fr
+Contact: mailto:sebastian@karlsen.fr
 Expires: 2027-02-28T23:00:00.000Z
 Encryption: dns:4dd68e2ab3a30973318ea903e088b3d3480655ef4236109fe47272c1._openpgpkey.karlsen.fr?type=OPENPGPKEY
 Preferred-Languages: en, no, fr
