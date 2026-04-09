@@ -10,7 +10,7 @@ main()
 
     {
         printf -- 'Contact: mailto:%s\n' "$contact"
-        printf -- 'Expires: %s\n' "$(date -d '-9 month ago' +'%Y-%m-%dT%H:%M:%S%z')"
+        printf -- 'Expires: %s\n' "$(date -d '-9 month ago' +'%Y-%m-%dT%H:%M:%SZ')"
         printf -- 'Encryption: https://www.karlsen.fr/.well-known/openpgpkey/hu/%s\n' "$key_filename"
         printf -- 'Preferred-Languages: en, no, fr\n'
         printf -- 'Canonical: https://www.karlsen.fr/.well-known/security.txt\n'
