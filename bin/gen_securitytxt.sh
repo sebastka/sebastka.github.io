@@ -1,19 +1,34 @@
 #!/bin/sh
 set -eu
 
-rm -f ../.well-known/security.txt
-
+main()
 {
-    printf -- 'Contact: mailto:postmaster@karlsen.fr\n'
-    printf -- 'Expires: %s\n' "$(date -d '-9 month ago' +'%Y-%m-%dT%H:%M:%S%z')"
-    printf -- 'Encryption: dns:4dd68e2ab3a30973318ea903e088b3d3480655ef4236109fe47272c1._openpgpkey.karlsen.fr?type=OPENPGPKEY\n'
-    printf -- 'Preferred-Languages: en, no, fr\n'
-    printf -- 'Canonical: https://www.karlsen.fr/.well-known/security.txt\n'
-} >/tmp/security.unsigned.txt
+    readonly contact='sebastian@karlsen.fr'
+    readonly key_filename="$(get_key_filename "$contact")"
 
-gpg --clearsign \
-    --local-user 94863C7F986D65E8 \
-    --output ../.well-known/security.txt \
-    /tmp/security.unsigned.txt
+    rm -f ../.well-known/security.txt
 
-rm /tmp/security.unsigned.txt
+    {
+        printf -- 'Contact: mailto:%s\n' "$contact"
+        printf -- 'Expires: %s\n' "$(date -d '-9 month ago' +'%Y-%m-%dT%H:%M:%S%z')"
+        printf -- 'Encryption: https://www.karlsen.fr/.well-known/openpgpkey/hu/%s\n' "$key_filename"
+        printf -- 'Preferred-Languages: en, no, fr\n'
+        printf -- 'Canonical: https://www.karlsen.fr/.well-known/security.txt\n'
+    } >/tmp/security.unsigned.txt
+
+    gpg --clearsign \
+        --local-user 94863C7F986D65E8 \
+        --output ../.well-known/security.txt \
+        /tmp/security.unsigned.txt
+
+    rm /tmp/security.unsigned.txt
+}
+
+# get_key_filename <email address>
+get_key_filename()
+{
+    gpg-wks-client --print-wkd-hash "$1" \
+        | cut -d' ' -f1
+}
+
+main
